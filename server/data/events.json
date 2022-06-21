@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "images": ["altin-fest-1.jpg", "altin-fest-2.jpg", "altin-fest-3.jpg"],
+    "name": "Altın Fest",
+    "description": "Marmara bölgesinin ilk ve en eğlenceli müzik festivali Altın Fest 22-23-24-25 Temmuz 2022’de gerçekleşecek…",
+    "start_date": "22/06/2022",
+    "end_date": "25/06/2022",
+    "category": 1,
+    "city": "İstanbul",
+    "address": "Kilyos Beach",
+    "map": "https://www.google.com/maps/search/kilyos+sahil/@41.2498772,29.047433,14z/data=!3m1!4b1",
+    "feature": true,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Kategori 1",
+        "price": 120.0
+      },
+      {
+        "seat": "Kategori 2",
+        "price": 150.0
+      },
+      {
+        "seat": "Kategori 3",
+        "price": 170.0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "images": ["evgeny-1.jpeg", "evgeny-2.jpeg"],
+    "name": "Evgeny Grinko Konseri",
+    "description": "Tiny Mouse Tales albümü için  “Plaktan duymaya alıştığım bazı eski masalların atmosferini yeniden yaratmaya çalıştım.” diyen Evgeny Grinko, büyülü müziğiyle dinleyicilerini adeta zamanda yolculuğa çıkarıyor.",
+    "start_date": "24/06/2022",
+    "end_date": "24/06/2022",
+    "category": 1,
+    "city": "İstanbul",
+    "address": "Kültürpark Açıkhava Tiyatrosu",
+    "map": "https://www.google.com/maps?q=k%C3%BClt%C3%BCr+park+a%C3%A7%C4%B1khava+tiyatrosu&um=1&ie=UTF-8&sa=X&ved=2ahUKEwip8c2O6L74AhW-R_EDHQU3AmsQ_AUoAXoECAMQAw",
+    "feature": false,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Kategori 1",
+        "price": 80.0
+      },
+      {
+        "seat": "Kategori 2",
+        "price": 110.0
+      },
+      {
+        "seat": "Kategori 3",
+        "price": 150.0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "images": ["amadeus.jpeg"],
+    "name": "Amadeus",
+    "description": "Peter Shaffer tarafından kaleme alınan, dünya müzik tarihinin unutulmaz bestecileri Wolfgang Amadeus Mozart ile Antonio Salieri’nin eşsiz hikayesini anlatan oyun “AMADEUS”, başrollerini Selçuk Yöntem, Okan Bayülgen ve Özlem Öçalmaz’ın paylaştığı, güçlü oyuncu kadrosu, 14 kişilik koro ve 11 kişilik canlı orkestradan oluşan 45 kişilik dev ekibi ve usta yönetmen Işıl Kasapoğlu rejisiyle Zorlu PSM’de tiyatroseverlerle buluşuyor.",
+    "start_date": "25/06/2022",
+    "end_date": "28/06/2022",
+    "category": 3,
+    "city": "İstanbul",
+    "address": "İzmir Alsancak",
+    "map": "https://www.google.com/maps?q=zorlu-psm-turkcell-platinum-sahnesi&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiTj-2L6b74AhWxSvEDHbxsCywQ_AUoAnoECAEQBA",
+    "feature": false,
+    "status": 1,
+    "free": true,
+    "prices": []
+  },
+  {
+    "id": 4,
+    "images": ["yamac-parasutu-1.jpg", "yamac-parasutu-2.jpg"],
+    "name": "Fethiye - Ölüdeniz Yamaç Paraşütü",
+    "description": "Aktivitemizde ; sizleri  konakladığınız otelden transfer araçlarımız ile alıyor ve Ölüdeniz'deki “HanumanTravel” ofisimize geliyoruz. Uçuş için  sizlerle ve pilotlarımız ile birlikte Babadağ’a çıkmak üzere , araçlarımız ile yola koyuluyoruz. Ofisimizin önünden uçuş pistine varmamız yaklaşık 25-30 dakika kadar sürüyor. Bir çok kültürde kutsal sayılan Sedir, Sandal, Ardıç ve Defne ağaçlarının çam ormanlarına karıştığı yollardan ilerlediğimiz bu kısa ama doyumsuz yolculuk sonrası kalkış alanına ulaşıyoruz.",
+    "start_date": "17/06/2022",
+    "end_date": "20/06/2022",
+    "category": 2,
+    "city": "Fethiye, Muğla",
+    "address": "Hanuman Paragliding Ölüdeniz",
+    "map": "https://www.google.com/maps/place/Hanuman+Paragliding+Turkey/@36.5457535,29.1216914,17z/data=!3m1!4b1!4m5!3m4!1s0x14c0472be9bdcb3b:0xf9745c73dd432854!8m2!3d36.5457492!4d29.1238801",
+    "feature": false,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Kategori 1",
+        "price": 1500.0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "images": ["istanbulu-kosuyorum-1.jpeg", "istanbulu-kosuyorum-2.jpeg"],
+    "name": "İstanbul'u Koşuyorum",
+    "description": "Paşa Limanı Caddesi vapur iskelesi önünden başlayacak yarış, Harem istikametine doğru Üsküdar Harem Sahil Yolu birleşiminden itibaren Harem'e kadar devam edecektir. Buradan 'U' dönüşü yapan yarış aynı yol üzerinden sahil yolu boyunca Üsküdar Meydan, Paşa Limanı Caddesi, Kuzguncuk Çarşı Caddesi, Abdullahağa Caddesi Beylerbeyi Askeri Kışlası önünü kadar devam edecektir. Buradan ikinci 'U' dönüşünü yapan yarış, Abdullahağa Caddesi, Kuzguncuk Çarşı Caddesi, Paşa Limanı Caddesi bitiminde Üsküdar Meydana kadar devam edecektir. Parkurun 9K lık bölümü bu şekilde tamalanırken 10K yı tamamlamak amacıyla yarış tekrar Harem yönüne doğru 500 metre ekstra (dönüş ile birlikte 1000 metre) bir mesafe daha koşulacak ve yarış buradan geri dönerek başladığı yer olan Üsküdar Meydanı'nda son bulacaktır. 2022 yılı itibariyle Yarış Üsküdar iç kısmına girmeyecek ve sadece sahil boyunca koşulacaktır.",
+    "start_date": "01/07/2022",
+    "end_date": "07/07/2022",
+    "category": 2,
+    "city": "İstanbul",
+    "address": "Üsküdar, İstanbul",
+    "map": "https://www.google.com/maps?q=%C3%9Csk%C3%BCdar+Meydan%C4%B1+(Mihrimah+Sultan+Camii+yan%C4%B1)&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjE87-P6774AhUZSvEDHU24Dt8Q_AUoAnoECAIQBA",
+    "feature": true,
+    "status": 1,
+    "free": true,
+    "prices": []
+  },
+  {
+    "id": 6,
+    "images": ["dennie-1.jpg", "dennie-2.jpg"],
+    "name": "Dennie'den Yeni Sergi",
+    "description": "Dennie Koleksiyonu’ndan seçilen yapıtları çocukluk ve oyun kavramları etrafında bir araya getiren “SanatBu | ThisArt” başlıklı sergiyi sanatseverlerle buluşturuyor.",
+    "start_date": "01/07/2022",
+    "end_date": "07/07/2022",
+    "category": 4,
+    "city": "İstanbul",
+    "address": "Arter Sanat Galerisi",
+    "map": "https://www.google.com/maps?q=arter+sanat+galerisi&sxsrf=ALiCzsZ1BvmiFyu2Ju-vXEKdbHrMvy_SPA:1655824956235&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQyCwguEIAEEMcBEK8BMgYIABAeEBYyBggAEB4QFjIGCAAQHhAWMgYIABAeEBYyBggAEB4QFjICCCYyAggmOgcIABBHELADOgcIABCwAxBDOg0ILhDHARCvARCwAxBDOgoIABDkAhCwAxgBOhIILhDHARCvARDIAxCwAxBDGAI6FQguEMcBEK8BENQCEMgDELADEEMYAjoECCMQJzoGCCMQJxATOg0ILhDHARCvARDUAhBDOgoILhDHARCvARBDOgQIABBDOhEILhCABBCxAxCDARDHARCjAjoOCC4QgAQQxwEQrwEQ1AI6CwgAEIAEELEDEIMBOgcIABCxAxBDOgsILhCABBCxAxCDAToICC4QsQMQgwE6CAgAEIAEELEDOg4ILhCABBCxAxDHARCvAToRCC4QgAQQsQMQxwEQrwEQ1AI6BQgAEMsBOgcIABAKEMsBOggIABAeEA8QFjoICAAQHhAWEAo6BAgAEA06CgguEMcBEK8BEA06BggAEB4QDToICAAQHhAIEA1KBQg8EgE0SgQIQRgASgQIRhgBUL8DWPkQYKoVaARwAXgAgAGGAogBqhCSAQYwLjEwLjKYAQCgAQHIARPAAQHaAQYIARABGAnaAQYIAhABGAg&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjj1-nb7L74AhUJQvEDHf7MBZUQ_AUoAnoECAMQBA",
+    "feature": true,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Normal",
+        "price": 750.0
+      }
+    ]
+  }
+]
