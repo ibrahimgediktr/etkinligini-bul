@@ -1,19 +1,19 @@
 [
-    {
-        "id":1,
-        "name":"Müzik"
-    },
-    {
-        "id":2,
-        "name":"Spor"
-    },
-    
-    {
-        "id":3,
-        "name":"Tiyatro"
-    },
-    {
-        "id":4,
-        "name":"Resim"
-    }
+  {
+    "id": 1,
+    "name": "Müzik"
+  },
+  {
+    "id": 2,
+    "name": "Spor"
+  },
+
+  {
+    "id": 3,
+    "name": "Tiyatro"
+  },
+  {
+    "id": 4,
+    "name": "Resim"
+  }
 ]
