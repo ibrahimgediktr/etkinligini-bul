@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { fetchEvents, fetchCategories } from "./api/api";
 
 function App() {
   const [events, setEvents] = useState(null);

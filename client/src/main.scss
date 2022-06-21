@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+// Variables - Start
+$bg-primary :#F62F63;
+$bg-secondary :#03012C;
+$bg-tertiary: #8F8AC0;
+$text-primary : #FFFFFF;
+$text-secondary : #7676A9;
+$text-gray : #ffffff;
+
+$font-size-h1: 3rem !default;
+$font-size-h2: 2.25rem !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: 1.5rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-h6: 1.1rem !default;
+$font-size-base: 1rem;
+$breakpoint-sm: 36rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 62rem;
+$breakpoint-xl: 75rem;
+$container-width: 69.375rem;
+$radius: 0.25rem;
+// Variables - End
+
+// Functions - Start
+@function px-to-rem($size) {
+ @return $size / 16px * 1rem;
+}
+
+// Functions - End
+
+//Mixins - Start
+@mixin breakpoint($point) {
+ @if $point==sm {
+  @media (max-width: $breakpoint-sm) {
+   @content;
+  }
+ }
+
+ @else if $point==md {
+  @media (max-width: $breakpoint-md) {
+   @content;
+  }
+ }
+
+ @else if $point==lg {
+  @media (max-width: $breakpoint-lg) {
+   @content;
+  }
+ }
+
+ @else if $point==xl {
+  @media (max-width: $breakpoint-xl) {
+   @content;
+  }
+ }
+
+ @else {
+  @media (max-width: $point) {
+   @content;
+  }
+ }
+}
+
+//Mixins- End
+
+// Global - Start
+*,
+*::after,
+*::before {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'DM Sans', sans-serif;
+ font-size: 1rem;
+}
+
+.container {
+ max-width: $container-width ;
+ margin-left: auto;
+ margin-right: auto;
+
+ @include breakpoint(xl) {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+ }
+}
+
+.input {
+ height: 40px;
+ border-radius: 0.25rem;
+ border: none;
+ padding-left: 0.5rem;
+ padding-right: 0.5rem;
+ font-family: 'DM Sans', sans-serif;
+ font-size: 0.9rem;
+}
+
+// Global - End
+
+//Typography - Start
+h1 {
+ font-size: $font-size-h1;
+
+ @include breakpoint(md) {
+  font-size: $font-size-h1 - px-to-rem(8px);
+ }
+
+ @include breakpoint(xl) {
+  font-size: $font-size-h1 - px-to-rem(4px);
+ }
+}
+
+h2 {
+ font-size: $font-size-h2;
+
+ @include breakpoint(xl) {
+  font-size: $font-size-h2 - px-to-rem(2px);
+ }
+}
+
+h3 {
+ font-size: $font-size-h3;
+
+ @include breakpoint(xl) {
+  font-size: $font-size-h3 - px-to-rem(2px);
+ }
+}
+
+h4 {
+ font-size: $font-size-h4;
+}
+
+h5 {
+ font-size: $font-size-h5;
+}
+
+h6 {
+ font-size: $font-size-h6;
+}
+
+p {
+ font-size: $font-size-base;
+ font-weight: 400;
+}
+
+a {
+ text-decoration: none;
+}
+
+//Typography - End
+
+// Buttons - Start
+.btn {
+ border: none;
+ font-family: 'DM Sans', sans-serif;
+ font-size: 1rem;
+ cursor: pointer;
+ display: inline-block;
+}
+
+.btn__primary {
+ background-color: $bg-secondary;
+ padding: 0.5rem 1rem;
+ color: $text-primary;
+ border-radius: $radius;
+ border: 2px solid $bg-secondary;
+
+ &:hover {
+  filter: brightness(1.5)
+ }
+}
+
+.btn__secondary {
+ background-color: $bg-tertiary;
+ padding: 0.5rem 1rem;
+ color: $text-primary;
+ border-radius: $radius;
+ border: 2px solid $bg-tertiary;
+
+ &:hover {
+  filter: brightness(1.2)
+ }
+}
+
+// Buttons - End
+
+
