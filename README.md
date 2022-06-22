@@ -52,14 +52,19 @@ paylaşılabilir.
 
 #### Bilgisayarınızda Çalıştırın
 
-Projeyi Klonlayın
+Projeyi klonlayın
 ```
 git clone https://github.com/ibrahimgediktr/etkinligini-bul.git
 ```
 
-Paketleri Yükleyin
+Paketleri yükleyin
 ```
 npm install / yarn install
+```
+
+İstemci tarafında ortam değişkenlerini ayarlayın
+```
+REACT_APP_BASE_ENDPOINT = 'http://localhost:5000'
 ```
 
 İstemci tarafını çalıştırma
@@ -67,11 +72,18 @@ npm install / yarn install
 cd client
 npm start / yarn start
 ```
+
+Sunucu tarafında ortam değişkenlerini ayarlayın
+```
+PORT = '5000'
+```
+
 Sunucu tarafını çalıştırma
 ```
 cd server
 npm start / yarn start
 ```
+
 
 
 
