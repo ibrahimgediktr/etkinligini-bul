@@ -8,6 +8,8 @@ function App() {
   const [events, setEvents] = useState(null);
   const [categories, setCategories] = useState(null);
 
+
+
   useEffect(() => {
     (async () => {
       const data = await fetchEvents();
@@ -25,7 +27,7 @@ function App() {
       <main className="main">
         <Router events={events} categories={categories} />
       </main>
-      <Footer />
+      <Footer categories={categories} events={events} />
     </>
   );
 }
