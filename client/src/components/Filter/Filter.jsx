@@ -3,26 +3,25 @@ import moment from "moment";
 import DatePicker from "react-datepicker";
 import tr from "date-fns/locale/tr";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 
-function Filter({ events, categories, setFilteredEvents }) {
+function Filter({ events, categories, filteredEvents, setFilteredEvents }) {
+  const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState({
-    start_date: null,
-    end_date: null,
+    start_date: new Date(),
+    end_date: new Date(),
   });
   const [filteredKeys, setFilteredKeys] = useState({
     searchTerm: "",
     start_date: null,
     end_date: null,
-    category: null,
+    category: "0",
     city: "",
   });
 
   const filterStartDate = moment(selectedDate?.start_date).format("YYYY/MM/DD");
   const filterEndDate = moment(selectedDate?.end_date).format("YYYY/MM/DD");
-
-  console.log(filterStartDate);
-  console.log(filterEndDate);
 
   useEffect(() => {
     setFilteredKeys((prevObject) => ({
@@ -38,19 +37,13 @@ function Filter({ events, categories, setFilteredEvents }) {
       var filterName = filteredKeys.searchTerm.length !== 0 ? event.name
         .toLocaleLowerCase()
         .includes(filteredKeys.searchTerm.toLocaleLowerCase()) : event
-      var filterCategory = filteredKeys.category !== null ? event.category === parseInt(filteredKeys.category) : event
+      var filterCategory = filteredKeys.category !== "0" ? event.category === parseInt(filteredKeys.category) : event
       var filterCity = filteredKeys.city.length !== 0 ? event.city
         .toLocaleLowerCase()
         .includes(filteredKeys.city.toLocaleLowerCase()) : event
-      // var filterDate = filteredKeys.start_date !== null && filteredKeys.end_date !== null  ?
-      //   filteredKeys?.start_date < event.start_date &&
-      //   event.start_date <= filteredKeys?.end_date : event
-      //   console.log(filterDate);
-      console.log(filteredKeys?.start_date > event.start_date);
-      return filterName && filterCategory && filterCity 
+      var filterDate = filteredKeys?.start_date <= moment(event.start_date).format("YYYY/MM/DD") && moment(event.start_date).format("YYYY/MM/DD") <= filteredKeys.end_date
+      return filterName && filterCategory && filterCity && filterDate
     });
-
-    console.log(updatedEvents);
     setFilteredEvents(updatedEvents);
   };
 
@@ -58,6 +51,7 @@ function Filter({ events, categories, setFilteredEvents }) {
   const handleFilter = (e) => {
     e.preventDefault();
     filtered();
+    navigate('/search');
   };
 
   return (
@@ -77,11 +71,12 @@ function Filter({ events, categories, setFilteredEvents }) {
           <select
             name="category"
             className="filter__category input"
+           
             onChange={(e) =>
               setFilteredKeys({ ...filteredKeys, category: e.target.value })
             }
           >
-            <option value="0">Kategoriler</option>
+            <option value="0"  >Kategoriler</option>
             {categories?.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}

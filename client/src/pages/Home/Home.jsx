@@ -5,15 +5,14 @@ import Event from "../../components/Event/Event";
 import moment from "moment";
 import "moment/locale/tr";
 
-function Home({ events, categories }) {
-  const [filteredEvents, setFilteredEvents] = useState([]);
+function Home({ events, categories, filteredEvents, setFilteredEvents }) {
 
+  console.log(filteredEvents);
   const parsedDate = (date) => {
     const formattedDate = moment(date).format("YYYY/MM/DD");
     return formattedDate;
   };
 
-  
   const pastEvents = events?.filter(
     (event) => moment(event.start_date).diff(moment(new Date()), "days") < 0 && moment(event.start_date).diff(moment(new Date()), "days") >= -6 
   );
@@ -21,7 +20,6 @@ function Home({ events, categories }) {
     (event) =>  moment(event.start_date).diff(moment(new Date()), "days") >= 0 && moment(event.start_date).diff(moment(new Date()), "days") <= 7
   )
 
-  console.log(pastEvents);
  
   return (
     <div className="home">
