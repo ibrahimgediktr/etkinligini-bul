@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchEvents, fetchCategories } from "./api/api";
+import Router from "./router/router";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [events, setEvents] = useState(null);
@@ -18,6 +20,10 @@ function App() {
 
   return (
     <>
+      <Navbar categories={categories} />
+      <main className="main">
+        <Router events={events} categories={categories} />
+      </main>
     </>
   );
 }

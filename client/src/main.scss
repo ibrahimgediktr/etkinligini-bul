@@ -79,6 +79,10 @@ body {
  font-size: 1rem;
 }
 
+li {
+ list-style-type: none;
+}
+
 .container {
  max-width: $container-width ;
  margin-left: auto;
@@ -189,4 +193,9 @@ a {
 
 // Buttons - End
 
+// Components
+@import './components/Navbar/Navbar';
+@import './components/Slider/Slider';
 
+// Pages 
+@import './pages/Home/Home';
