@@ -78,6 +78,12 @@ body {
  font-family: 'DM Sans', sans-serif;
  font-size: 1rem;
 }
+main {
+ display: flex;
+ flex-direction: column;
+ flex: 1 1 auto;
+ min-height: 100vh;
+}
 
 li {
  list-style-type: none;
@@ -198,6 +204,8 @@ a {
 @import './components/Slider/Slider';
 @import './components/Filter/Filter';
 @import './components/Event/Event';
+@import './components/Footer/Footer';
 
 // Pages 
 @import './pages/Home/Home';
+@import './pages/EventDetail/EventDetail'
