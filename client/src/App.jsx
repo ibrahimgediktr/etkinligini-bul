@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchEvents, fetchCategories } from "./api/api";
 import Router from "./router/router";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [events, setEvents] = useState(null);
@@ -24,6 +25,7 @@ function App() {
       <main className="main">
         <Router events={events} categories={categories} />
       </main>
+      <Footer />
     </>
   );
 }
