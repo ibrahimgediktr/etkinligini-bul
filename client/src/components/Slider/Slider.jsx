@@ -4,7 +4,7 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { useRef } from "react";
-
+import moment from 'moment'
 
 function Slider({ events }) {
   const navigationPrevRef = useRef(null);
@@ -31,7 +31,7 @@ function Slider({ events }) {
           <div className="slider__text">
             <h1 className="slider__heading">{event.name}</h1>
             <h6 className="slider__date">
-              {event.start_date} - {event.end_date}{" "}
+              {moment(event?.start_date).format("DD MMMM YYYY HH:mm")} - {moment(event?.end_date).format("DD MMMM YYYY HH:mm")}{" "}
             </h6>
             <p className="slider__desc">{event.intro}</p>
             <Link
