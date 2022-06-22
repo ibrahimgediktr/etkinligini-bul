@@ -18,8 +18,11 @@ function Filter({ events, categories, setFilteredEvents }) {
     city: "",
   });
 
-  const filterStartDate = moment(selectedDate?.start_date).format("D/MM/Y ");
-  const filterEndDate = moment(selectedDate?.end_date).format("D/MM/Y ");
+  const filterStartDate = moment(selectedDate?.start_date).format("YYYY/MM/DD");
+  const filterEndDate = moment(selectedDate?.end_date).format("YYYY/MM/DD");
+
+  console.log(filterStartDate);
+  console.log(filterEndDate);
 
   useEffect(() => {
     setFilteredKeys((prevObject) => ({
@@ -31,22 +34,26 @@ function Filter({ events, categories, setFilteredEvents }) {
   }, [filterStartDate, filterEndDate]);
 
   const filtered = () => {
-    const updatedEvents = events.filter((event) => {
-      var filterName = event.name
+    const updatedEvents = events?.filter((event) => {
+      var filterName = filteredKeys.searchTerm.length !== 0 ? event.name
         .toLocaleLowerCase()
-        .includes(filteredKeys.searchTerm.toLocaleLowerCase());
-      var filterCategory = event.category === parseInt(filteredKeys.category);
-      var filterCity = event.city
+        .includes(filteredKeys.searchTerm.toLocaleLowerCase()) : event
+      var filterCategory = filteredKeys.category !== null ? event.category === parseInt(filteredKeys.category) : event
+      var filterCity = filteredKeys.city.length !== 0 ? event.city
         .toLocaleLowerCase()
-        .includes(filteredKeys.city.toLocaleLowerCase());
-      var filterDate =
-        filteredKeys?.start_date < event.start_date &&
-        event.start_date <= filteredKeys?.end_date;
-      return filterName && filterCategory && filterCity && filterDate;
+        .includes(filteredKeys.city.toLocaleLowerCase()) : event
+      // var filterDate = filteredKeys.start_date !== null && filteredKeys.end_date !== null  ?
+      //   filteredKeys?.start_date < event.start_date &&
+      //   event.start_date <= filteredKeys?.end_date : event
+      //   console.log(filterDate);
+      console.log(filteredKeys?.start_date > event.start_date);
+      return filterName && filterCategory && filterCity 
     });
 
+    console.log(updatedEvents);
     setFilteredEvents(updatedEvents);
   };
+
 
   const handleFilter = (e) => {
     e.preventDefault();
