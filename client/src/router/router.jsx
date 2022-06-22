@@ -5,8 +5,9 @@ import Events from '../pages/Events/Events';
 import EventDetail from "../pages/EventDetail/EventDetail";
 import Categories from "../pages/Categories/Categories";
 import Category from "../pages/Category/Category";
+import Search from "../pages/Search/Search";
 
-function Router({events, categories}) {
+function Router({events, categories, filteredEvents, setFilteredEvents}) {
   
   return (
     <>
@@ -14,7 +15,7 @@ function Router({events, categories}) {
         <Route
           path="/"
           index
-          element={<Home events={events} categories={categories}/>}
+          element={<Home events={events} categories={categories} filteredEvents={filteredEvents} setFilteredEvents={setFilteredEvents}/>}
         />
         <Route
           path="events"
@@ -28,9 +29,14 @@ function Router({events, categories}) {
           path="categories/:category_id"
           element={<Category />}
         />
+         
         <Route
           path="categories"
           element={<Categories categories={categories} />}
+        />
+         <Route
+          path="search"
+          element={<Search filteredEvents={filteredEvents} setFilteredEvents={filteredEvents} />}
         />
         
         {/* <Route path="*" element={<Error404 />} /> */}

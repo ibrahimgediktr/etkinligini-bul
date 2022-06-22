@@ -7,8 +7,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   const [events, setEvents] = useState(null);
   const [categories, setCategories] = useState(null);
-
-
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -25,7 +24,7 @@ function App() {
     <>
       <Navbar categories={categories} />
       <main className="main">
-        <Router events={events} categories={categories} />
+        <Router events={events} categories={categories} filteredEvents={filteredEvents} setFilteredEvents={setFilteredEvents}/>
       </main>
       <Footer categories={categories} events={events} />
     </>
