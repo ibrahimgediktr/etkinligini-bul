@@ -1,0 +1,36 @@
+.footer {
+ background-color: $bg-secondary;
+ margin-top: 2rem;
+ padding-top: 2rem;
+ padding-bottom: 2rem;
+
+ &__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: flex-start;
+  grid-gap: auto;
+ }
+
+ &__heading {
+  color: #fff;
+
+ }
+
+ &__links {
+  display: flex;
+  flex-direction: column;
+
+  .footer__link {
+   color: #fff;
+   margin: 0.5rem 0;
+  }
+ }
+
+ &__socials {
+  a {
+   color: #fff;
+   font-size: 1.5rem;
+   margin-left: 1rem;
+  }
+ }
+}

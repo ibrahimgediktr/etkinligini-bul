@@ -5,7 +5,9 @@ function Navbar({ categories }) {
   return (
     <nav className="navbar">
       <div className="container navbar__container">
-        <h1 className="navbar__logo">Etkinliğini Bul</h1>
+        <Link to="/">
+          <h1 className="navbar__logo">Etkinliğini Bul</h1>
+        </Link>
         <div className="navbar__list">
           <Link to="/" className="navbar__link">
             Anasayfa
