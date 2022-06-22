@@ -50,4 +50,28 @@ paylaşılabilir.
 
 - Node.js - Rest API
 
+#### Bilgisayarınızda Çalıştırın
+
+Projeyi Klonlayın
+```
+git clone https://github.com/ibrahimgediktr/etkinligini-bul.git
+```
+
+Paketleri Yükleyin
+```
+npm install / yarn install
+```
+
+İstemci tarafını çalıştırma
+```
+cd client
+npm start / yarn start
+```
+Sunucu tarafını çalıştırma
+```
+cd server
+npm start / yarn start
+```
+
+
 
