@@ -7,19 +7,21 @@ import "moment/locale/tr";
 
 function Home({ events, categories }) {
   const [filteredEvents, setFilteredEvents] = useState([]);
-  moment.locale("tr");
 
   const parsedDate = (date) => {
     const formattedDate = moment(date).format("YYYY/MM/DD");
     return formattedDate;
   };
+
   
   const pastEvents = events?.filter(
-    (event) => parsedDate(event.start_date) < parsedDate(new Date())
+    (event) => moment(event.start_date).diff(moment(new Date()), "days") < 0 && moment(event.start_date).diff(moment(new Date()), "days") >= -6 
   );
   const upcomingEvents = events?.filter(
     (event) =>  moment(event.start_date).diff(moment(new Date()), "days") >= 0 && moment(event.start_date).diff(moment(new Date()), "days") <= 7
   )
+
+  console.log(pastEvents);
  
   return (
     <div className="home">
@@ -40,7 +42,7 @@ function Home({ events, categories }) {
             </ul>
           </div>
           <div>
-            <h3 className="events__heading">Geçmiş Etkinlikler</h3>
+            <h3 className="events__heading">Geçmiş Etkinlikler (Son 1 Hafta)</h3>
             <ul className="events__list">
               {pastEvents?.map((event) => (
                 <Event key={event.id} event={event} />
