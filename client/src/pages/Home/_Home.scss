@@ -2,10 +2,20 @@
  &__heading {
   margin-top: 2rem;
  }
+
  &__list {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
+
+  @include breakpoint(md) {
+   grid-template-columns: 1fr 1fr;
+
+  }
+  @include breakpoint(sm) {
+   grid-template-columns: 1fr;
+
+  }
  }
 }
