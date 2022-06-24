@@ -1,10 +1,10 @@
-import { Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { useRef } from "react";
-import moment from 'moment'
+import moment from "moment";
 
 function Slider({ events }) {
   const navigationPrevRef = useRef(null);
@@ -17,12 +17,17 @@ function Slider({ events }) {
   return (
     <Swiper
       loop={true}
-      modules={[Navigation]}
+      modules={[Navigation, Pagination]}
       spaceBetween={0}
       slidesPerView={1}
       navigation={{
         prevEl: ".left",
         nextEl: ".right",
+      }}
+      pagination={{ 
+        clickable: true ,
+        el: `.slider__pagination`,
+        bulletClass: `slider__pagination--bullet`
       }}
     >
       {filteredEvents?.map((event) => (
@@ -31,7 +36,8 @@ function Slider({ events }) {
           <div className="slider__text">
             <h1 className="slider__heading">{event.name}</h1>
             <h6 className="slider__date">
-              {moment(event?.start_date).format("DD MMMM YYYY HH:mm")} - {moment(event?.end_date).format("DD MMMM YYYY HH:mm")}{" "}
+              {moment(event?.start_date).format("DD MMMM YYYY HH:mm")} -{" "}
+              {moment(event?.end_date).format("DD MMMM YYYY HH:mm")}{" "}
             </h6>
             <p className="slider__desc">{event.intro}</p>
             <Link
@@ -52,6 +58,7 @@ function Slider({ events }) {
           <GrFormNext size={24} color="#fff" />
         </button>
       </div>
+      <div className="slider__pagination"></div>
     </Swiper>
   );
 }
