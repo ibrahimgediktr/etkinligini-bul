@@ -12,14 +12,16 @@
  &__logo {
   font-size: 2.5rem;
   color: $text-primary;
-  @include breakpoint(sm){
+
+  @include breakpoint(sm) {
    font-size: 1.75rem;
   }
  }
 
  &__list {
   display: flex;
-  @include breakpoint(md){
+
+  @include breakpoint(md) {
    display: none;
   }
  }
@@ -35,9 +37,40 @@
 
  .menu__button {
   display: none;
-
   @include breakpoint(md) {
-   display: block;
+   display: flex;
   }
+ }
+}
+
+
+.mobile__navbar {
+ display: none;
+ position: fixed;
+ top: px-to-rem(60px);
+ right: 0;
+ z-index: 3;
+ background-color: $bg-primary;
+ padding-top: 1rem;
+ padding-right: 1.5rem;
+ min-height: 100vh;
+ width: 50%;
+ height: 100%;
+ padding-bottom: 2rem;
+ transform: translateX(100%);
+ transition: all 0.3s ease-in-out;
+ &.active{
+  transform: translateX(0);
+ }
+ @include breakpoint(md){
+  display: block;
+ }
+ &__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+   .navbar__link {
+    margin: 0.5rem 1rem;
+   }
  }
 }
