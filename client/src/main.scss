@@ -115,14 +115,19 @@ li {
 //Typography - Start
 h1 {
  font-size: $font-size-h1;
+ @include breakpoint(xl) {
+  font-size: $font-size-h1 - px-to-rem(4px);
+ }
 
  @include breakpoint(md) {
   font-size: $font-size-h1 - px-to-rem(8px);
  }
 
- @include breakpoint(xl) {
-  font-size: $font-size-h1 - px-to-rem(4px);
+ @include breakpoint(sm) {
+  font-size: $font-size-h1 - px-to-rem(12px);
  }
+
+
 }
 
 h2 {
