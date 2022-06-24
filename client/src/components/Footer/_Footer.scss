@@ -9,6 +9,13 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: flex-start;
   grid-gap: auto;
+  @include breakpoint(lg){
+   grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include breakpoint(sm){
+   grid-template-columns: 1fr;
+   grid-gap: 2rem;
+  }
  }
 
  &__heading {
@@ -19,6 +26,7 @@
  &__links {
   display: flex;
   flex-direction: column;
+  
 
   .footer__link {
    color: #fff;
@@ -27,10 +35,26 @@
  }
 
  &__socials {
+  @include breakpoint(lg){
+    grid-area: 2/2/2/2;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+ //  @include breakpoint(md){
+ //   margin-top: 0.5rem;
+ // }
+ @include breakpoint(sm){
+  grid-area: unset;
+  text-align: left;
+ }
   a {
    color: #fff;
    font-size: 1.5rem;
    margin-left: 1rem;
+   @include breakpoint(lg){
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+   }
   }
  }
 }
