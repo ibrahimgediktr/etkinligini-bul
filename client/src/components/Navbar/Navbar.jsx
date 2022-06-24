@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {FiMenu} from 'react-icons/fi';
 
 function Navbar({ categories }) {
   return (
@@ -21,6 +22,9 @@ function Navbar({ categories }) {
               {category.name}
             </Link>
           ))}
+        </div>
+        <div className="menu__button">
+          <FiMenu size={25} color="#fff" />
         </div>
       </div>
     </nav>
