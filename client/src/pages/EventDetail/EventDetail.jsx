@@ -5,7 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import { fetchCategoryEvents, fetchSingleEvent } from "../../api/api";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { BsFillCalendarDateFill } from "react-icons/bs";
+import { MdDateRange } from "react-icons/md";
+import { SiGooglemaps } from "react-icons/si";
 import Event from "../../components/Event/Event";
 import moment from "moment";
 import "swiper/css";
@@ -35,9 +36,9 @@ function EventDetail() {
     })();
   }, [event_id, event?.category]);
 
-
-  const similarEvents = categoryEvents?.filter(similar => similar.id !== event.id);
-
+  const similarEvents = categoryEvents?.filter(
+    (similar) => similar.id !== event.id
+  );
 
   if (loading) return <div>Loading...</div>;
   return (
@@ -72,15 +73,21 @@ function EventDetail() {
         <div className="event__detail__right">
           <h3 className="name">{event?.name}</h3>
           <div className="date">
-            <BsFillCalendarDateFill size={22} />
             <span>
-              {" "}
-              {moment(event?.start_date).format("DD MMMM YYYY HH:mm")} -{" "}
+              <MdDateRange size={22} />
+              {moment(event?.start_date).format("DD MMMM YYYY HH:mm")}
+            </span>
+            <span>
+              <MdDateRange size={22} />
               {moment(event?.end_date).format("DD MMMM YYYY HH:mm")}
             </span>
             <div></div>
           </div>
           <p className="description">{event?.description}</p>
+          <a href={event?.map} className="map" target="_blank">
+            <SiGooglemaps />
+            <span>Haritada Göster</span>
+          </a>
           {event?.free ? (
             <div className="prices">
               <h5>Etkinlik Ücretsizdir !</h5>
@@ -89,12 +96,13 @@ function EventDetail() {
             <div className="prices">
               <h6>Bilet Satın Al</h6>
               <div className="tickets">
-                {event?.prices.length > 0 && event?.prices.map(ticket => (
-                  <div className="ticket">
-                    <span>{ticket.seat}</span>
-                    <h6>{ticket.price} ₺</h6>
-                  </div>
-                ))}
+                {event?.prices.length > 0 &&
+                  event?.prices.map((ticket, index) => (
+                    <div key={index} className="ticket">
+                      <span>{ticket.seat}</span>
+                      <h6>{ticket.price} ₺</h6>
+                    </div>
+                  ))}
               </div>
             </div>
           )}
