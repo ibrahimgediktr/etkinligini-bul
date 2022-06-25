@@ -13,17 +13,17 @@ function Search({ searchParams, events }) {
 
   const updatedEvents = events?.filter((event) => {
     var filterName =
-    name && name != ""
+    name && name !== ""
         ? event.name
             .toLocaleLowerCase()
             .includes(name.toLocaleLowerCase())
         : event;
     var filterCategory =
-    category && category != 0
+    category && category !== "0"
         ? event.category === parseInt(category)
         : event;
     var filterCity =
-     city && city != ""
+     city && city !== ""
         ? event.city
             .toLocaleLowerCase()
             .includes(city.toLocaleLowerCase())
