@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Filter from "../../components/Filter/Filter";
 import Slider from "../../components/Slider/Slider";
 import Event from "../../components/Event/Event";
 import moment from "moment";
 import "moment/locale/tr";
 
-function Home({ events, categories, filteredEvents, setFilteredEvents }) {
-
-  console.log(moment("2022/06/24 23:00").diff(moment(new Date()), "hours"));
+function Home({ events, categories }) {
  
   const pastEvents = events?.filter(
     (event) => moment(event.start_date).diff(moment(new Date()), "days") <= 0 && moment(event.start_date).diff(moment(new Date()), "days") >= -6 && moment(event.end_date).diff(moment(new Date()), "hours") < 0
@@ -23,7 +21,6 @@ function Home({ events, categories, filteredEvents, setFilteredEvents }) {
       <Filter
         events={events}
         categories={categories}
-        setFilteredEvents={setFilteredEvents}
       />
       <section className="events">
         <div className="container events__container">

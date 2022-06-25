@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import DatePicker from "react-datepicker";
 import tr from "date-fns/locale/tr";
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
 
-function Filter({ events, categories, filteredEvents, setFilteredEvents }) {
+function Filter({ categories }) {
   const navigate = useNavigate();
+
   const [selectedDate, setSelectedDate] = useState({
     start_date: null,
     end_date: null,
   });
   const [filteredKeys, setFilteredKeys] = useState({
     searchTerm: "",
-    start_date: null,
-    end_date: null,
+    start_date: "",
+    end_date: "",
     category: "0",
     city: "",
   });
@@ -33,44 +34,16 @@ function Filter({ events, categories, filteredEvents, setFilteredEvents }) {
     }));
   };
 
-  const filtered = () => {
-    const updatedEvents = events?.filter((event) => {
-      var filterName =
-        filteredKeys.searchTerm.length !== 0
-          ? event.name
-              .toLocaleLowerCase()
-              .includes(filteredKeys.searchTerm.toLocaleLowerCase())
-          : event;
-      var filterCategory =
-        filteredKeys.category !== "0"
-          ? event.category === parseInt(filteredKeys.category)
-          : event;
-      var filterCity =
-        filteredKeys.city.length !== 0
-          ? event.city
-              .toLocaleLowerCase()
-              .includes(filteredKeys.city.toLocaleLowerCase())
-          : event;
-      var filterDate =
-        filteredKeys.start_date !== null ?
-        filteredKeys?.start_date <=
-          moment(event.start_date).format("YYYY/MM/DD") &&
-        moment(event.start_date).format("YYYY/MM/DD") <= filteredKeys.end_date : event
-      return filterName && filterCategory && filterCity && filterDate;
-    });
-    setFilteredEvents(updatedEvents);
-  };
-
-  const handleFilter = (e) => {
-    e.preventDefault();
-    filtered();
-    navigate("/search");
+  const handleFilter = () => {
+    navigate(
+      `/search?name=${filteredKeys.searchTerm}&category=${filteredKeys.category}&city=${filteredKeys.city}&start_date=${filteredKeys.start_date}&end_date=${filteredKeys.end_date}`
+    );
   };
 
   return (
     <div className="filter">
       <div className="container filter__container">
-        <form method="get" onSubmit={handleFilter} className="filter__form">
+        <div className="filter__form">
           <input
             type="text"
             name="search"
@@ -115,12 +88,16 @@ function Filter({ events, categories, filteredEvents, setFilteredEvents }) {
             placeholderText="Tarih"
             dateFormat="dd MMMM"
             locale={tr}
-              // inline
+            // inline
           />
-          <button type="submit" className="btn btn__primary">
+          <button
+            type="button"
+            onClick={() => handleFilter()}
+            className="btn btn__primary"
+          >
             Ara
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
