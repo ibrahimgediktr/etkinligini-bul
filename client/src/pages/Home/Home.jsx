@@ -7,17 +7,13 @@ import "moment/locale/tr";
 
 function Home({ events, categories, filteredEvents, setFilteredEvents }) {
 
-  console.log(filteredEvents);
-  const parsedDate = (date) => {
-    const formattedDate = moment(date).format("YYYY/MM/DD");
-    return formattedDate;
-  };
-
+  console.log(moment("2022/06/24 23:00").diff(moment(new Date()), "hours"));
+ 
   const pastEvents = events?.filter(
-    (event) => moment(event.start_date).diff(moment(new Date()), "days") < 0 && moment(event.start_date).diff(moment(new Date()), "days") >= -6 
+    (event) => moment(event.start_date).diff(moment(new Date()), "days") <= 0 && moment(event.start_date).diff(moment(new Date()), "days") >= -6 && moment(event.end_date).diff(moment(new Date()), "hours") < 0
   );
   const upcomingEvents = events?.filter(
-    (event) =>  moment(event.start_date).diff(moment(new Date()), "days") >= 0 && moment(event.start_date).diff(moment(new Date()), "days") <= 7
+    (event) =>  moment(event.start_date).diff(moment(new Date()), "days") >= 0 && moment(event.start_date).diff(moment(new Date()), "days") <= 7 && moment(event.end_date) > moment(new Date()) 
   )
 
  
