@@ -52,9 +52,10 @@ function Filter({ events, categories, filteredEvents, setFilteredEvents }) {
               .includes(filteredKeys.city.toLocaleLowerCase())
           : event;
       var filterDate =
+        filteredKeys.start_date !== null ?
         filteredKeys?.start_date <=
           moment(event.start_date).format("YYYY/MM/DD") &&
-        moment(event.start_date).format("YYYY/MM/DD") <= filteredKeys.end_date;
+        moment(event.start_date).format("YYYY/MM/DD") <= filteredKeys.end_date : event
       return filterName && filterCategory && filterCity && filterDate;
     });
     setFilteredEvents(updatedEvents);
