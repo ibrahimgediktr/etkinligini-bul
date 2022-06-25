@@ -5,6 +5,8 @@ import 'moment/locale/tr'
 function Event({ event }) {
   moment.locale("tr");
 
+  const continueEvent = moment(event?.start_date) <= moment(new Date()) && moment(event?.end_date) >= moment(new Date());
+
   return (
     <li key={event?.id} className="event__item">
       <Link to={`/events/${event?.id}`}>
@@ -16,6 +18,9 @@ function Event({ event }) {
           <p className="city">{event?.city}</p>
           <p className="address">{event?.address}</p>
           <span className="date">{moment(event?.start_date).fromNow()}</span>
+          {continueEvent && (
+            <span className="date" style={{backgroundColor:"#2ecc71"}}>Devam ediyor</span>
+          )}
         </div>
       </Link>
     </li>
