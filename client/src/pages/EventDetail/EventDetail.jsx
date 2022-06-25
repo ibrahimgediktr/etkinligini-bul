@@ -10,6 +10,7 @@ import { SiGooglemaps } from "react-icons/si";
 import Event from "../../components/Event/Event";
 import moment from "moment";
 import "swiper/css";
+import Loading from "../../components/Loading/Loading";
 
 function EventDetail() {
   const { event_id } = useParams();
@@ -40,7 +41,7 @@ function EventDetail() {
     (similar) => similar.id !== event.id
   );
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />
   return (
     <div className="event__detail">
       <div className="container event__detail__container">
