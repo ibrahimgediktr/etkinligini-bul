@@ -84,7 +84,7 @@ function EventDetail() {
             <div></div>
           </div>
           <p className="description">{event?.description}</p>
-          <a href={event?.map} className="map" target="_blank">
+          <a href={event?.map} className="map" target="_blank" rel="noreferrer">
             <SiGooglemaps />
             <span>Haritada Göster</span>
           </a>
