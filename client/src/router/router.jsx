@@ -6,6 +6,11 @@ import EventDetail from "../pages/EventDetail/EventDetail";
 import Categories from "../pages/Categories/Categories";
 import Category from "../pages/Category/Category";
 import Search from "../pages/Search/Search";
+import { useLocation } from "react-router-dom";
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
 function Router({events, categories, filteredEvents, setFilteredEvents}) {
   
