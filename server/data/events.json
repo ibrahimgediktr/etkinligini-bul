@@ -136,5 +136,72 @@
         "price": 750.0
       }
     ]
+  },
+  {
+    "id": 7,
+    "images": ["dj.jpg"],
+    "name": "Dimitri Vegas & Like Mike",
+    "intro": "Belçikalı DJ ve prodüktörler Dimitri Vegas & Like Mike, BKM ve Akademi Organizasyon iş birliğiyle İstanbul’da!",
+    "description": "Dennie Koleksiyonu’ndan seçilen yapıtları çocukluk ve oyun kavramları etrafında bir araya getiren “SanatBu | ThisArt” başlıklı sergiyi sanatseverlerle buluşturuyor.",
+    "start_date": "2022/07/02 18:35",
+    "end_date": "2022/07/02 23:35",
+    "category": 1,
+    "city": "Ankara",
+    "address": "Sincan Merkez",
+    "map": "https://www.google.com/maps?q=sincan+merkez&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiqqcPp8Mb4AhXBYPEDHXXxCWsQ_AUoAXoECAEQAw",
+    "feature": false,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Normal",
+        "price": 500.0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "images": ["tiyatronet.jpg"],
+    "name": "Tiyatronet",
+    "intro": "Tiyatronet, sevdiğiniz oyunları sizlerle buluşturuyor.",
+    "description": "Tiyatronet, sevdiğiniz oyunları sizlerle buluşturuyor.",
+    "start_date": "2022/07/06 18:35",
+    "end_date": "2022/07/06 23:35",
+    "category": 3,
+    "city": "Bursa",
+    "address": "Bursa Merkez",
+    "map": "https://www.google.com/maps?q=bursa+merkez&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiLvLWr8cb4AhXdYPEDHX6QCAwQ_AUoAXoECAEQAw",
+    "feature": false,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Normal",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "images": ["blue.jpeg"],
+    "name": "Blue Man Group",
+    "intro": "The brightly colored and rousing show experience is back! The connection between the audience and the Blue Men is always intense, deep and surprising - during the show as well as before and after.",
+    "description": "The brightly colored and rousing show experience is back! The connection between the audience and the Blue Men is always intense, deep and surprising - during the show as well as before and after.",
+    "start_date": "2022/08/06 18:35",
+    "end_date": "2022/08/12 23:35",
+    "category": 4,
+    "city": "İzmir",
+    "address": "İzmir Konak",
+    "map": "https://www.google.com/maps?q=bursa+merkez&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiLvLWr8cb4AhXdYPEDHX6QCAwQ_AUoAXoECAEQAw",
+    "feature": false,
+    "status": 1,
+    "free": false,
+    "prices": [
+      {
+        "seat": "Normal",
+        "price": 120.0
+      }
+    ]
   }
 ]
+
