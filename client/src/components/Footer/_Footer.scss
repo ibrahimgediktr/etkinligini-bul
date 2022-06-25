@@ -35,6 +35,8 @@
  }
 
  &__socials {
+  display:flex;
+  align-items:center;
   @include breakpoint(lg){
     grid-area: 2/2/2/2;
     text-align: center;
@@ -49,7 +51,6 @@
  }
   a {
    color: #fff;
-   font-size: 1.5rem;
    margin-left: 1rem;
    @include breakpoint(lg){
     margin-left: 0.5rem;

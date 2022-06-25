@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { CgWebsite } from "react-icons/cg";
+import { AiFillGithub } from "react-icons/ai";
+
 function Footer({ categories, events }) {
   const featuredEvents = events?.filter((event) => event.feature === true);
   return (
@@ -32,14 +35,14 @@ function Footer({ categories, events }) {
           ))}
         </div>
         <div className="footer__socials">
-          <a href="">
-            <BsInstagram />
+          <a href="https://www.ibrahimgedik.dev/" target="_blank" rel="noreferrer" >
+            <CgWebsite size={30} />
           </a>
-          <a href="">
-            <BsFacebook />
+          <a href="https://www.linkedin.com/in/ibrahimgedik/" target="_blank" rel="noreferrer">
+            <BsLinkedin size={24} />
           </a>
-          <a href="">
-            <BsTwitter />
+          <a href="https://github.com/ibrahimgediktr" target="_blank" rel="noreferrer">
+            <AiFillGithub size={28} />
           </a>
         </div>
       </div>
